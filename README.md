@@ -7,3 +7,7 @@ Bundle `npm` modules for Cisco Webex Room device macros.
 ```
 usage: macrofy <input> [output]
 ```
+
+## Example
+
+![](./macrofy.gif)
