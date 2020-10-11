@@ -1,0 +1,6 @@
+.envrc
+.log
+*.tgz
+*.tar.gz
+macrofy.gif
+shell.nix
