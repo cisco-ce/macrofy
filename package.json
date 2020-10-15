@@ -2,14 +2,14 @@
   "name": "macrofy",
   "version": "0.1.1",
   "description": "Bundle npm modules for your macros",
-  "main": "index.js",
   "author": "Martin Øinæs Myrseth",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:cisco-ce/macrofy.git"
   },
-  "bin": "./index.js",
+  "main": "./index.js",
+  "bin": "./cli.js",
   "dependencies": {
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-json": "^4.1.0",
