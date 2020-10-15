@@ -1,6 +1,6 @@
 {
   "name": "macrofy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Bundle npm modules for your macros",
   "author": "Martin Øinæs Myrseth",
   "license": "MIT",
