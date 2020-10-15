@@ -1,18 +1,25 @@
-const rollup = require('rollup')
+const rollup = require('rollup');
 const commonjs = require('@rollup/plugin-commonjs');
 const json = require('@rollup/plugin-json');
 const resolve = require('@rollup/plugin-node-resolve').default;
 const nodeBuiltins = require('rollup-plugin-node-builtins');
+const { terser } = require('rollup-plugin-terser');
 
-module.exports = async function (input, output) {
+module.exports = async function build({ input, output, minify }) {
+  const plugins = [
+    commonjs(),
+    json(),
+    nodeBuiltins(),
+    resolve(),
+  ];
+
+  if (minify) {
+    plugins.push(terser());
+  }
+
   const bundle = await rollup.rollup({
     input,
-    plugins: [
-      commonjs(),
-      json(),
-      nodeBuiltins(),
-      resolve(),
-    ],
+    plugins,
   });
 
   await bundle.write({
@@ -20,4 +27,4 @@ module.exports = async function (input, output) {
     format: 'cjs',
     file: output,
   });
-}
+};
