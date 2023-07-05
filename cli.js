@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const macrofy = require('./index');
+const build = require('./index');
 
 if (process.argv.length < 3) {
   console.error('usage: macrofy <input> [output]');
@@ -8,4 +8,4 @@ if (process.argv.length < 3) {
 
 }
 
-build(process.argv[2], process.argv[3] || 'bundle.js');
+build({input:process.argv[2], output: process.argv[3] || 'bundle.js', minify:false});
