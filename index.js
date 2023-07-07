@@ -24,7 +24,7 @@ module.exports = async function build({ input, output, minify }) {
 
   await bundle.write({
     exports: 'auto',
-    format: 'cjs',
+    format: 'es',
     file: output,
   });
 };
